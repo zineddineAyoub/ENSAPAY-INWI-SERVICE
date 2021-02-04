@@ -48,7 +48,7 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id,$codeCreance)
     {
 
 
@@ -57,7 +57,7 @@ class ClientController extends Controller
             $client = DB::table('clients')->where('phoneNumber',$id)->first();
 
             $id_client =  (string)$client['_id'];
-            $bill = DB::table('bills')->where('idClient',$id_client)->where('payed',false)->get();
+            $bill = DB::table('bills')->where('idClient',$id_client)->where('codeCreance',$codeCreance)->where('payed',false)->get();
            $data = $client;
            $data["bills"] = $bill;
            return $data;

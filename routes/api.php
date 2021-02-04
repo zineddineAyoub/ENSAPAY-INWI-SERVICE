@@ -26,4 +26,4 @@ Route::get('inwi/bill','BillController@index');
 
 Route::get('inwi/form/{codeCreance}','FormController@show');
 
-Route::get('inwi/payment/{phone}/inwi2002','ClientController@show');
+Route::get('inwi/payment/{phone}/{codeCreance}','ClientController@show');
