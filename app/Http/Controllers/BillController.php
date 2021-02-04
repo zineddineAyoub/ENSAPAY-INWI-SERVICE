@@ -83,7 +83,7 @@ class BillController extends Controller
 
     public function payBill($id){
         $int = (int)$id;
-         DB::table('bills')->where('id','=',$int)->update(['payed'=>true,'payedDate'=>date('Y-m-d H:i:s')]);
+         DB::table('bills')->where('id','=',$int)->update(['payed'=>true,'payedDate'=>date('Y-m-d')]);
         return  DB::table('bills')->where('id','=',$int)->first();
 
     }
