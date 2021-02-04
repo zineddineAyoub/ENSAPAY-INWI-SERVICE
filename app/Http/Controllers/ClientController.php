@@ -59,7 +59,7 @@ class ClientController extends Controller
             $id_client =  (string)$client['_id'];
             $bill = DB::table('bills')->where('idClient',$id_client)->where('payed',false)->get();
            $data = $client;
-           $data["Bills"] = $bill;
+           $data["bills"] = $bill;
            return $data;
 
           } catch (\Exception $e) {

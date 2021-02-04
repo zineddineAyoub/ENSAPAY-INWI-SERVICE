@@ -47,7 +47,7 @@ class FormController extends Controller
      */
     public function show($codeCreance)
     {
-        //
+
         $bills = DB::table('forms')->where('codeCreance',$codeCreance)->first();
         return $bills;
 
